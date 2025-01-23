@@ -17,10 +17,10 @@ class Result {
      *  3. INTEGER tax_percent
      */
 
-    public static void solve(double meal_cost, int tip_percent, int tax_percent) {
+    public static void solve(double meal_cost, double tip_percent, double tax_percent) {
         // Write your code here
-        tip_percent = (int) Math.round((15.0 / 100) * meal_cost);
-        tax_percent = (int) Math.round((8.0 / 100) * meal_cost);
+        tip_percent = (meal_cost * tip_percent) / 100;
+        tax_percent = (meal_cost * tax_percent) / 100;
         double tot = meal_cost + tip_percent + tax_percent;
         System.out.println(Math.round(tot));
 
